@@ -22,7 +22,6 @@ body {
     padding: 40px 0;
 }
 
-/* Engineering Header */
 header {
     text-align: left;
     border-left: 4px solid var(--accent);
@@ -59,7 +58,7 @@ h1 {
     padding-top: 10px;
 }
 
-/* Picture Frame */
+/* Picture Frame Fixes */
 .image-frame {
     position: relative;
     width: 100%;
@@ -68,6 +67,10 @@ h1 {
     overflow: hidden;
     margin-bottom: 30px;
     border: 1px solid #333;
+    /* Professional fallback background */
+    background-color: #111;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(0, 242, 255, .05) 25%, rgba(0, 242, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 242, 255, .05) 75%, rgba(0, 242, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0, 242, 255, .05) 25%, rgba(0, 242, 255, .05) 26%, transparent 27%, transparent 74%, rgba(0, 242, 255, .05) 75%, rgba(0, 242, 255, .05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
 }
 
 .main-pic {
@@ -76,6 +79,7 @@ h1 {
     object-fit: cover;
     filter: contrast(1.1) brightness(0.8);
     transition: 0.5s;
+    display: block; /* Ensures no weird spacing */
 }
 
 .main-pic:hover {
@@ -83,7 +87,6 @@ h1 {
     transform: scale(1.02);
 }
 
-/* Masculine / Tech Buttons */
 .button-container {
     display: flex;
     gap: 20px;
@@ -148,6 +151,7 @@ h1 {
     opacity: 0.2;
     box-shadow: 0 0 10px var(--accent);
     animation: scan 4s linear infinite;
+    z-index: 100;
 }
 
 @keyframes scan { from { top: 0; } to { top: 100%; } }
